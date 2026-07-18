@@ -37,9 +37,28 @@ jobs:
         run: sdkmanager "platforms;android-36" "build-tools;35.0.0"
 
       - name: Compiler et vérifier
-        run: gradle :app:assembleDebug :app:lintDebug --stacktrace
+        id: compile
+        continue-on-error: true
+        shell: bash
+        run: gradle :app:assembleDebug :app:lintDebug --stacktrace > build.log 2>&1
+
+      - name: Publier le journal de compilation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: VideoPur4K-build-log
+          path: build.log
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Arrêter si la compilation a échoué
+        if: steps.compile.outcome == 'failure'
+        run: |
+          tail -n 80 build.log
+          exit 1
 
       - name: Publier l'APK
+        if: steps.compile.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: VideoPur4K-debug-apk

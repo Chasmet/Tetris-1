@@ -31,3 +31,7 @@ La V1 améliore visuellement la vidéo mais ne reconstruit pas encore des détai
 ## APK
 
 Chaque modification lance automatiquement GitHub Actions. L'APK de test se trouve dans l'artefact `VideoPur4K-debug-apk` du dernier workflow réussi.
+
+## Validation
+
+Cette branche sert à compiler l'application, exécuter Android Lint et vérifier la génération de l'APK avant livraison.

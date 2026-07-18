@@ -225,8 +225,10 @@ public class MainActivity extends Activity {
         statusText.setText("Vidéo prête");
 
         try {
-            int takeFlags = data.getFlags() & Intent.FLAG_GRANT_READ_URI_PERMISSION;
-            getContentResolver().takePersistableUriPermission(selectedVideoUri, takeFlags);
+            getContentResolver().takePersistableUriPermission(
+                    selectedVideoUri,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+            );
         } catch (SecurityException ignored) {
             // Certains gestionnaires de fichiers ne proposent pas de permission persistante.
         }
