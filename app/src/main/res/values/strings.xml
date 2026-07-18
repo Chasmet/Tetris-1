@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vidéo Pur 4K</string>
+    <string name="choose_video">Choisir une vidéo</string>
+    <string name="start_export">Améliorer la vidéo</string>
+    <string name="cancel_export">Annuler</string>
+    <string name="share_result">Partager le résultat</string>
+    <string name="play_original">Lire l’original</string>
+    <string name="play_result">Lire le résultat</string>
+</resources>

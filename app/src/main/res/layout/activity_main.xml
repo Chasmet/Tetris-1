@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="18dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VIDÉO PUR 4K"
+            android:textColor="@color/accent"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.16" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Une vidéo plus propre, nette et détaillée"
+            android:textColor="@color/text_primary"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Traitement 100 % local. Aucun fichier n’est envoyé sur Internet."
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <VideoView
+                android:id="@+id/videoPreview"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="#05070B" />
+
+            <TextView
+                android:id="@+id/fileNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Aucune vidéo sélectionnée"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/videoInfoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Choisis une vidéo depuis ton téléphone."
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/selectButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/button_primary"
+                android:text="@string/choose_video"
+                android:textAllCaps="false"
+                android:textColor="#061017"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mode d’amélioration"
+                android:textColor="@color/text_primary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/presetSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/accent"
+                android:popupBackground="@color/card_alt" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Résolution de sortie"
+                android:textColor="@color/text_primary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/resolutionSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/accent"
+                android:popupBackground="@color/card_alt" />
+
+            <TextView
+                android:id="@+id/modeDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Nettoyage équilibré, détails renforcés et couleurs corrigées."
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prêt"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="12dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@color/accent"
+                android:progressBackgroundTint="#263141" />
+
+            <TextView
+                android:id="@+id/progressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="6dp"
+                android:text="0 %"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/exportButton"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_primary"
+                android:enabled="false"
+                android:text="@string/start_export"
+                android:textAllCaps="false"
+                android:textColor="#061017"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_secondary"
+                android:enabled="false"
+                android:text="@string/cancel_export"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/resultPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vidéo améliorée enregistrée"
+                android:textColor="@color/success"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/playOriginalButton"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_secondary"
+                    android:text="Original"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_primary" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="1dp" />
+
+                <Button
+                    android:id="@+id/playResultButton"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_secondary"
+                    android:text="Résultat"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_primary" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/shareButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_primary"
+                android:text="@string/share_result"
+                android:textAllCaps="false"
+                android:textColor="#061017"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Le mode 4K demande beaucoup de puissance et d’espace libre. Une vidéo très floue ne peut pas retrouver parfaitement les détails absents de l’original."
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</ScrollView>
